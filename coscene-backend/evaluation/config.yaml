@@ -1,0 +1,159 @@
+# CoScene Evaluation Framework Configuration
+
+# Dataset Generation Settings
+dataset:
+  # Random seed for reproducibility
+  seed: 42
+
+  # Number of test cases per complexity level
+  num_cases:
+    simple: 50
+    medium: 100
+    complex: 100
+
+  # Complexity levels to generate
+  complexities:
+    - simple
+    # - medium 
+    # - complex
+
+  # Output directory for generated datasets
+  output_dir: evaluation/datasets
+
+  # Number of prompt variations per test case
+  prompt_variations: 3
+
+# Evaluation Settings
+evaluation:
+  # Agent configuration
+  agent:
+    # Use existing agent from coscene-backend/agents
+    use_production_agent: true
+
+    # Agent settings to test (for ablation studies)
+    enable_input_rendering: true
+    model_name: "claude-sonnet-4-5-20250929"
+
+  # Metrics to compute
+  metrics:
+    structural:
+      - object_count_accuracy
+      - object_type_accuracy
+      - position_mae
+      - color_accuracy
+
+    visual:
+      - ssim
+      - mse
+      - psnr
+
+    semantic:
+      - intent_preservation
+      - no_hallucinations
+
+    agent:
+      - success_rate
+      - token_usage
+      - latency
+
+  # Visual metric settings
+  visual_metrics:
+    # Render quality for ground truth
+    ground_truth_quality: "preview"
+
+    # Render multiple views for comparison
+    multi_view: false 
+
+    # SSIM threshold for success
+    ssim_threshold: 0.8
+
+  # Output directory for results
+  output_dir: evaluation/results
+
+  # Report format
+  report_format:
+    - json
+    - markdown
+    # - html 
+
+# Ablation Study Configuration
+ablation:
+  # Enable ablation mode
+  enabled: false
+
+  # Configurations to test
+  configs:
+    baseline:
+      enable_input_rendering: true
+      prompt_version: "current"
+      model: "claude-sonnet-4-5-20250929"
+
+    no_input_rendering:
+      enable_input_rendering: false
+      prompt_version: "current"
+      model: "claude-sonnet-4-5-20250929"
+
+    # simple_prompt:
+    #   enable_input_rendering: true
+    #   prompt_version: "simple"
+    #   model: "claude-sonnet-4-5-20250929"
+
+  # Run each config on same test set
+  use_same_test_set: true
+
+# Rendering Settings (for ground truth generation)
+rendering:
+  # Use Blender for rendering ground truth
+  enable_rendering: true
+
+  # Blender executable path (auto-detect if not specified)
+  blender_executable: null
+
+  # Render quality
+  quality: "preview"  # preview | verification | high
+
+  # Camera angles to render
+  camera_angles:
+    - perspective
+    # - top       # Enable for multi-view
+    # - front     # Enable for multi-view
+    # - side      # Enable for multi-view
+
+  # Image dimensions
+  resolution:
+    width: 512
+    height: 512
+
+  # Samples per pixel
+  samples: 64
+
+# Logging Settings
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+  # Log to file
+  log_to_file: true
+  log_file: evaluation/evaluation.log
+
+# Performance Settings
+performance:
+  # Number of parallel evaluation jobs
+  max_workers: 1  # Sequential for now
+
+  # Timeout per test case (seconds)
+  timeout_per_case: 120
+
+  # Cache generated datasets
+  cache_datasets: true
+
+# Debug Settings
+debug:
+  # Save intermediate outputs
+  save_intermediate: false
+
+  # Verbose output
+  verbose: false
+
+  # Dry run (don't actually call agent)
+  dry_run: false

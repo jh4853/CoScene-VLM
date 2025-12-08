@@ -1,0 +1,2104 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "complexity": "simple",
+    "num_test_cases": 50,
+    "generated_date": "2025-11-29T12:10:04.085180",
+    "seed": 42,
+    "config": {
+      "prompt_variations": 3
+    }
+  },
+  "test_cases": [
+    {
+      "id": "simple_add_cylinder_1",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"CyanCylinder_1\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (2, 0, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/CyanCylinder_1/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 1.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cylinder",
+          "color_name": "cyan",
+          "color": [
+            0.0,
+            1.0,
+            1.0
+          ],
+          "position": [
+            2,
+            0,
+            0
+          ],
+          "scale": 1.0
+        },
+        "description": "Add a cyan cylinder"
+      },
+      "prompt": "Create a cyan tube to the right",
+      "prompt_variations": [
+        "Create a cyan tube to the right",
+        "Make a cyan tube to the right",
+        "Place a cyan cylindrical object to the right"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "cylinder",
+        "new_object_color": [
+          0.0,
+          1.0,
+          1.0
+        ],
+        "new_object_position": [
+          2,
+          0,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_sphere_2",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"YellowSphere_2\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, -2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/YellowSphere_2/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "sphere",
+          "color_name": "yellow",
+          "color": [
+            1.0,
+            1.0,
+            0.0
+          ],
+          "position": [
+            0,
+            -2,
+            0
+          ],
+          "scale": 0.5
+        },
+        "description": "Add a yellow sphere"
+      },
+      "prompt": "Place a yellow sphere at position (0,-2,0)",
+      "prompt_variations": [
+        "Place a yellow sphere at position (0,-2,0)",
+        "Create a yellow ball at the back",
+        "Add a yellow sphere at at position (0,-2,0)"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "sphere",
+        "new_object_color": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "new_object_position": [
+          0,
+          -2,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_3",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"BlueCube_3\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (2, 0, 0)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlueCube_3/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"BlueCube_3\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (2, 0, 0)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlueCube_3/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "BlueCube_3",
+          "old_color_name": "blue",
+          "new_color_name": "green",
+          "new_color": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        },
+        "description": "Change the blue cube to green"
+      },
+      "prompt": "Make the blue box green",
+      "prompt_variations": [
+        "Make the blue box green",
+        "Turn the blue cubic object green",
+        "Turn the blue cube green"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "BlueCube_3",
+        "new_color": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_4",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"GreenCylinder_4\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GreenCylinder_4/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"GreenCylinder_4\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GreenCylinder_4/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.0, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "GreenCylinder_4",
+          "old_color_name": "green",
+          "new_color_name": "purple",
+          "new_color": [
+            0.5,
+            0.0,
+            0.5
+          ]
+        },
+        "description": "Change the green cylinder to purple"
+      },
+      "prompt": "Turn the green tube purple",
+      "prompt_variations": [
+        "Turn the green tube purple",
+        "Color the green cylindrical object purple",
+        "Color the green cylinder purple"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "GreenCylinder_4",
+        "new_color": [
+          0.5,
+          0.0,
+          0.5
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cylinder_5",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"YellowCylinder_5\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/YellowCylinder_5/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cylinder",
+          "color_name": "yellow",
+          "color": [
+            1.0,
+            1.0,
+            0.0
+          ],
+          "position": [
+            -2,
+            0,
+            0
+          ],
+          "scale": 0.5
+        },
+        "description": "Add a yellow cylinder"
+      },
+      "prompt": "Create a yellow cylinder at position (-2,0,0)",
+      "prompt_variations": [
+        "Create a yellow cylinder at position (-2,0,0)",
+        "Put a yellow cylindrical object on the left side",
+        "Create a yellow cylindrical object on the left side"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "cylinder",
+        "new_object_color": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "new_object_position": [
+          -2,
+          0,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cylinder_7",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"GrayCylinder_6\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, 0, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GrayCylinder_6/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.5, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"GrayCylinder_6\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, 0, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GrayCylinder_6/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.5, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n    def Cylinder \"BrownCylinder_7\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BrownCylinder_7/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.6, 0.3, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cylinder",
+          "color_name": "brown",
+          "color": [
+            0.6,
+            0.3,
+            0.0
+          ],
+          "position": [
+            -2,
+            0,
+            0
+          ],
+          "scale": 1.0
+        },
+        "description": "Add a brown cylinder"
+      },
+      "prompt": "I want a brown cylindrical object on the left side",
+      "prompt_variations": [
+        "I want a brown cylindrical object on the left side",
+        "Make a brown tube 2 units left",
+        "Make a brown cylindrical object to the left"
+      ],
+      "expected_metrics": {
+        "object_count": 2,
+        "new_object_type": "cylinder",
+        "new_object_color": [
+          0.6,
+          0.3,
+          0.0
+        ],
+        "new_object_position": [
+          -2,
+          0,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cube_8",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"WhiteCube_8\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/WhiteCube_8/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cube",
+          "color_name": "white",
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "position": [
+            -2,
+            0,
+            0
+          ],
+          "scale": 0.5
+        },
+        "description": "Add a white cube"
+      },
+      "prompt": "Create a white cubic object on the left side",
+      "prompt_variations": [
+        "Create a white cubic object on the left side",
+        "Create a white cubic object at position (-2,0,0)",
+        "I want a white cubic object at position (-2,0,0)"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "cube",
+        "new_object_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "new_object_position": [
+          -2,
+          0,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cylinder_10",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"YellowSphere_9\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, 0, 2)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/YellowSphere_9/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"YellowSphere_9\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, 0, 2)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/YellowSphere_9/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n    def Cylinder \"PurpleCylinder_10\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/PurpleCylinder_10/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.0, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cylinder",
+          "color_name": "purple",
+          "color": [
+            0.5,
+            0.0,
+            0.5
+          ],
+          "position": [
+            0,
+            2,
+            0
+          ],
+          "scale": 2.0
+        },
+        "description": "Add a purple cylinder"
+      },
+      "prompt": "Put a purple cylinder 2 units forward",
+      "prompt_variations": [
+        "Put a purple cylinder 2 units forward",
+        "Place a purple cylindrical object in front",
+        "Add a purple cylinder at 2 units forward"
+      ],
+      "expected_metrics": {
+        "object_count": 2,
+        "new_object_type": "cylinder",
+        "new_object_color": [
+          0.5,
+          0.0,
+          0.5
+        ],
+        "new_object_position": [
+          0,
+          2,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cylinder_12",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"GreenCylinder_11\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GreenCylinder_11/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"GreenCylinder_11\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GreenCylinder_11/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n    def Cylinder \"BlackCylinder_12\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlackCylinder_12/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cylinder",
+          "color_name": "black",
+          "color": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -2,
+            0,
+            0
+          ],
+          "scale": 0.5
+        },
+        "description": "Add a black cylinder"
+      },
+      "prompt": "Make a black tube to the left",
+      "prompt_variations": [
+        "Make a black tube to the left",
+        "Make a black tube on the left side",
+        "Make a black cylindrical object to the left"
+      ],
+      "expected_metrics": {
+        "object_count": 2,
+        "new_object_type": "cylinder",
+        "new_object_color": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "new_object_position": [
+          -2,
+          0,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_13",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"BlueCube_13\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlueCube_13/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"BlueCube_13\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlueCube_13/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "BlueCube_13",
+          "old_color_name": "blue",
+          "new_color_name": "magenta",
+          "new_color": [
+            1.0,
+            0.0,
+            1.0
+          ]
+        },
+        "description": "Change the blue cube to magenta"
+      },
+      "prompt": "Color the blue cube magenta",
+      "prompt_variations": [
+        "Color the blue cube magenta",
+        "Change the color of the blue box to magenta",
+        "Change the color of the blue cubic object to magenta"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "BlueCube_13",
+        "new_color": [
+          1.0,
+          0.0,
+          1.0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cube_14",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"BlueCube_14\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, -2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlueCube_14/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cube",
+          "color_name": "blue",
+          "color": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0,
+            -2,
+            0
+          ],
+          "scale": 0.5
+        },
+        "description": "Add a blue cube"
+      },
+      "prompt": "Place a blue box at position (0,-2,0)",
+      "prompt_variations": [
+        "Place a blue box at position (0,-2,0)",
+        "Add a blue cube at at the back",
+        "Put a blue cube in back"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "cube",
+        "new_object_color": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "new_object_position": [
+          0,
+          -2,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_sphere_15",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"BrownSphere_15\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BrownSphere_15/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.6, 0.3, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "sphere",
+          "color_name": "brown",
+          "color": [
+            0.6,
+            0.3,
+            0.0
+          ],
+          "position": [
+            0,
+            2,
+            0
+          ],
+          "scale": 0.5
+        },
+        "description": "Add a brown sphere"
+      },
+      "prompt": "Place a brown sphere 2 units forward",
+      "prompt_variations": [
+        "Place a brown sphere 2 units forward",
+        "Make a brown ball 2 units forward",
+        "Put a brown spherical object at position (0,2,0)"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "sphere",
+        "new_object_color": [
+          0.6,
+          0.3,
+          0.0
+        ],
+        "new_object_position": [
+          0,
+          2,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cylinder_16",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"CyanCylinder_16\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/CyanCylinder_16/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 1.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cylinder",
+          "color_name": "cyan",
+          "color": [
+            0.0,
+            1.0,
+            1.0
+          ],
+          "position": [
+            0,
+            2,
+            0
+          ],
+          "scale": 1.5
+        },
+        "description": "Add a cyan cylinder"
+      },
+      "prompt": "I want a cyan tube at position (0,2,0)",
+      "prompt_variations": [
+        "I want a cyan tube at position (0,2,0)",
+        "Add a cyan cylinder at 2 units forward",
+        "Add a cyan cylindrical object at in front"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "cylinder",
+        "new_object_color": [
+          0.0,
+          1.0,
+          1.0
+        ],
+        "new_object_position": [
+          0,
+          2,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_sphere_17",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"GreenSphere_17\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, 0, 2)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GreenSphere_17/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "sphere",
+          "color_name": "green",
+          "color": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "position": [
+            0,
+            0,
+            2
+          ],
+          "scale": 0.5
+        },
+        "description": "Add a green sphere"
+      },
+      "prompt": "Create a green sphere above",
+      "prompt_variations": [
+        "Create a green sphere above",
+        "Put a green sphere 2 units up",
+        "Put a green spherical object at position (0,0,2)"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "sphere",
+        "new_object_color": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "new_object_position": [
+          0,
+          0,
+          2
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cylinder_18",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"PurpleCylinder_18\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, -2, 0)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/PurpleCylinder_18/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.0, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cylinder",
+          "color_name": "purple",
+          "color": [
+            0.5,
+            0.0,
+            0.5
+          ],
+          "position": [
+            0,
+            -2,
+            0
+          ],
+          "scale": 2.0
+        },
+        "description": "Add a purple cylinder"
+      },
+      "prompt": "Create a purple cylindrical object at position (0,-2,0)",
+      "prompt_variations": [
+        "Create a purple cylindrical object at position (0,-2,0)",
+        "Create a purple cylinder in back",
+        "Make a purple cylindrical object at the back"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "cylinder",
+        "new_object_color": [
+          0.5,
+          0.0,
+          0.5
+        ],
+        "new_object_position": [
+          0,
+          -2,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_19",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"BlackCube_19\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 0, -2)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlackCube_19/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"BlackCube_19\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 0, -2)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlackCube_19/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.6, 0.3, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "BlackCube_19",
+          "old_color_name": "black",
+          "new_color_name": "brown",
+          "new_color": [
+            0.6,
+            0.3,
+            0.0
+          ]
+        },
+        "description": "Change the black cube to brown"
+      },
+      "prompt": "Change the color of the black cubic object to brown",
+      "prompt_variations": [
+        "Change the color of the black cubic object to brown",
+        "Make the black cube brown",
+        "Set the black cubic object color to brown"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "BlackCube_19",
+        "new_color": [
+          0.6,
+          0.3,
+          0.0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_20",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"YellowSphere_20\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (2, 0, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/YellowSphere_20/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"YellowSphere_20\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (2, 0, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/YellowSphere_20/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.0, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "YellowSphere_20",
+          "old_color_name": "yellow",
+          "new_color_name": "purple",
+          "new_color": [
+            0.5,
+            0.0,
+            0.5
+          ]
+        },
+        "description": "Change the yellow sphere to purple"
+      },
+      "prompt": "Set the yellow sphere color to purple",
+      "prompt_variations": [
+        "Set the yellow sphere color to purple",
+        "Turn the yellow ball purple",
+        "Change the yellow sphere's color to purple"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "YellowSphere_20",
+        "new_color": [
+          0.5,
+          0.0,
+          0.5
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_21",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"GreenCylinder_21\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, 0, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GreenCylinder_21/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"GreenCylinder_21\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, 0, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GreenCylinder_21/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "GreenCylinder_21",
+          "old_color_name": "green",
+          "new_color_name": "blue",
+          "new_color": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "description": "Change the green cylinder to blue"
+      },
+      "prompt": "Change the green cylinder's color to blue",
+      "prompt_variations": [
+        "Change the green cylinder's color to blue",
+        "Set the green cylindrical object color to blue",
+        "Set the green cylinder color to blue"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "GreenCylinder_21",
+        "new_color": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_22",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"BlueSphere_22\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlueSphere_22/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"BlueSphere_22\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlueSphere_22/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "BlueSphere_22",
+          "old_color_name": "blue",
+          "new_color_name": "black",
+          "new_color": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "description": "Change the blue sphere to black"
+      },
+      "prompt": "Turn the blue ball black",
+      "prompt_variations": [
+        "Turn the blue ball black",
+        "Change the color of the blue spherical object to black",
+        "Color the blue spherical object black"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "BlueSphere_22",
+        "new_color": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_23",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"YellowSphere_23\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/YellowSphere_23/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"YellowSphere_23\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/YellowSphere_23/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 0.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "YellowSphere_23",
+          "old_color_name": "yellow",
+          "new_color_name": "red",
+          "new_color": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        "description": "Change the yellow sphere to red"
+      },
+      "prompt": "Color the yellow spherical object red",
+      "prompt_variations": [
+        "Color the yellow spherical object red",
+        "Color the yellow sphere red",
+        "Change the color of the yellow ball to red"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "YellowSphere_23",
+        "new_color": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cylinder_24",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"BlackCylinder_24\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, -2, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlackCylinder_24/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cylinder",
+          "color_name": "black",
+          "color": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0,
+            -2,
+            0
+          ],
+          "scale": 1.0
+        },
+        "description": "Add a black cylinder"
+      },
+      "prompt": "Add a black tube at in back",
+      "prompt_variations": [
+        "Add a black tube at in back",
+        "Create a black cylinder in back",
+        "Make a black cylinder at position (0,-2,0)"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "cylinder",
+        "new_object_color": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "new_object_position": [
+          0,
+          -2,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cylinder_25",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"PurpleCylinder_25\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, 0, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/PurpleCylinder_25/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.0, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cylinder",
+          "color_name": "purple",
+          "color": [
+            0.5,
+            0.0,
+            0.5
+          ],
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 0.5
+        },
+        "description": "Add a purple cylinder"
+      },
+      "prompt": "I want a purple tube at the origin",
+      "prompt_variations": [
+        "I want a purple tube at the origin",
+        "Put a purple cylinder at the origin",
+        "Create a purple cylindrical object at position (0,0,0)"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "cylinder",
+        "new_object_color": [
+          0.5,
+          0.0,
+          0.5
+        ],
+        "new_object_position": [
+          0,
+          0,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_sphere_27",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"MagentaCube_26\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 0, -2)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/MagentaCube_26/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"MagentaCube_26\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 0, -2)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/MagentaCube_26/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n    def Sphere \"BlackSphere_27\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, -2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlackSphere_27/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "sphere",
+          "color_name": "black",
+          "color": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0,
+            -2,
+            0
+          ],
+          "scale": 0.5
+        },
+        "description": "Add a black sphere"
+      },
+      "prompt": "Add a black spherical object at 2 units back",
+      "prompt_variations": [
+        "Add a black spherical object at 2 units back",
+        "Place a black ball 2 units back",
+        "Put a black sphere 2 units back"
+      ],
+      "expected_metrics": {
+        "object_count": 2,
+        "new_object_type": "sphere",
+        "new_object_color": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "new_object_position": [
+          0,
+          -2,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_28",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"BlueCube_28\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlueCube_28/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"BlueCube_28\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlueCube_28/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.5, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "BlueCube_28",
+          "old_color_name": "blue",
+          "new_color_name": "gray",
+          "new_color": [
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        "description": "Change the blue cube to gray"
+      },
+      "prompt": "Change the color of the blue cubic object to gray",
+      "prompt_variations": [
+        "Change the color of the blue cubic object to gray",
+        "Make the blue cubic object gray",
+        "Color the blue box gray"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "BlueCube_28",
+        "new_color": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cube_29",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"GreenCube_29\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 0, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GreenCube_29/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cube",
+          "color_name": "green",
+          "color": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1.0
+        },
+        "description": "Add a green cube"
+      },
+      "prompt": "Put a green box in the middle",
+      "prompt_variations": [
+        "Put a green box in the middle",
+        "Make a green box in the middle",
+        "Make a green cubic object at the origin"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "cube",
+        "new_object_color": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "new_object_position": [
+          0,
+          0,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_30",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"RedCube_30\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 0, 0)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/RedCube_30/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 0.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"RedCube_30\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 0, 0)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/RedCube_30/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "RedCube_30",
+          "old_color_name": "red",
+          "new_color_name": "magenta",
+          "new_color": [
+            1.0,
+            0.0,
+            1.0
+          ]
+        },
+        "description": "Change the red cube to magenta"
+      },
+      "prompt": "Make the red cube magenta",
+      "prompt_variations": [
+        "Make the red cube magenta",
+        "Turn the red cube magenta",
+        "Change the color of the red box to magenta"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "RedCube_30",
+        "new_color": [
+          1.0,
+          0.0,
+          1.0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_sphere_32",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"BrownCylinder_31\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BrownCylinder_31/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.6, 0.3, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"BrownCylinder_31\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BrownCylinder_31/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.6, 0.3, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n    def Sphere \"GreenSphere_32\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, 0, -2)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GreenSphere_32/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "sphere",
+          "color_name": "green",
+          "color": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "position": [
+            0,
+            0,
+            -2
+          ],
+          "scale": 1.0
+        },
+        "description": "Add a green sphere"
+      },
+      "prompt": "Place a green sphere at the bottom",
+      "prompt_variations": [
+        "Place a green sphere at the bottom",
+        "Place a green spherical object 2 units down",
+        "I want a green sphere below"
+      ],
+      "expected_metrics": {
+        "object_count": 2,
+        "new_object_type": "sphere",
+        "new_object_color": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "new_object_position": [
+          0,
+          0,
+          -2
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_33",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"RedCube_33\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/RedCube_33/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 0.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"RedCube_33\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/RedCube_33/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.6, 0.3, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "RedCube_33",
+          "old_color_name": "red",
+          "new_color_name": "brown",
+          "new_color": [
+            0.6,
+            0.3,
+            0.0
+          ]
+        },
+        "description": "Change the red cube to brown"
+      },
+      "prompt": "Change the red cubic object's color to brown",
+      "prompt_variations": [
+        "Change the red cubic object's color to brown",
+        "Make the red box brown",
+        "Color the red box brown"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "RedCube_33",
+        "new_color": [
+          0.6,
+          0.3,
+          0.0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_sphere_34",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"BlueSphere_34\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlueSphere_34/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "sphere",
+          "color_name": "blue",
+          "color": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0,
+            2,
+            0
+          ],
+          "scale": 0.5
+        },
+        "description": "Add a blue sphere"
+      },
+      "prompt": "Create a blue spherical object at the front",
+      "prompt_variations": [
+        "Create a blue spherical object at the front",
+        "I want a blue spherical object 2 units forward",
+        "Put a blue sphere in front"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "sphere",
+        "new_object_color": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "new_object_position": [
+          0,
+          2,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_35",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"BlackSphere_35\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (2, 0, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlackSphere_35/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"BlackSphere_35\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (2, 0, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlackSphere_35/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 0.5, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "BlackSphere_35",
+          "old_color_name": "black",
+          "new_color_name": "orange",
+          "new_color": [
+            1.0,
+            0.5,
+            0.0
+          ]
+        },
+        "description": "Change the black sphere to orange"
+      },
+      "prompt": "Turn the black ball orange",
+      "prompt_variations": [
+        "Turn the black ball orange",
+        "Change the black sphere's color to orange",
+        "Make the black spherical object orange"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "BlackSphere_35",
+        "new_color": [
+          1.0,
+          0.5,
+          0.0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cube_37",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"CyanCube_36\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 0, -2)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/CyanCube_36/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 1.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"CyanCube_36\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 0, -2)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/CyanCube_36/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 1.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n    def Cube \"MagentaCube_37\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 0, 2)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/MagentaCube_37/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cube",
+          "color_name": "magenta",
+          "color": [
+            1.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0,
+            0,
+            2
+          ],
+          "scale": 2.0
+        },
+        "description": "Add a magenta cube"
+      },
+      "prompt": "Make a magenta cubic object on top",
+      "prompt_variations": [
+        "Make a magenta cubic object on top",
+        "Add a magenta cube at on top",
+        "Create a magenta cubic object on top"
+      ],
+      "expected_metrics": {
+        "object_count": 2,
+        "new_object_type": "cube",
+        "new_object_color": [
+          1.0,
+          0.0,
+          1.0
+        ],
+        "new_object_position": [
+          0,
+          0,
+          2
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cylinder_38",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"WhiteCylinder_38\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/WhiteCylinder_38/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cylinder",
+          "color_name": "white",
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "position": [
+            -2,
+            0,
+            0
+          ],
+          "scale": 1.5
+        },
+        "description": "Add a white cylinder"
+      },
+      "prompt": "I want a white tube to the left",
+      "prompt_variations": [
+        "I want a white tube to the left",
+        "I want a white tube 2 units left",
+        "Put a white cylinder at position (-2,0,0)"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "cylinder",
+        "new_object_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "new_object_position": [
+          -2,
+          0,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cube_39",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"WhiteCube_39\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 0, 0)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/WhiteCube_39/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cube",
+          "color_name": "white",
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "scale": 1.5
+        },
+        "description": "Add a white cube"
+      },
+      "prompt": "Place a white box at the center",
+      "prompt_variations": [
+        "Place a white box at the center",
+        "Make a white box at the origin",
+        "I want a white cubic object at the origin"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "cube",
+        "new_object_color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "new_object_position": [
+          0,
+          0,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cube_40",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"GrayCube_40\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GrayCube_40/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.5, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cube",
+          "color_name": "gray",
+          "color": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "position": [
+            0,
+            2,
+            0
+          ],
+          "scale": 1.0
+        },
+        "description": "Add a gray cube"
+      },
+      "prompt": "Place a gray cubic object at the front",
+      "prompt_variations": [
+        "Place a gray cubic object at the front",
+        "I want a gray cubic object in front",
+        "Put a gray box 2 units forward"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "cube",
+        "new_object_color": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "new_object_position": [
+          0,
+          2,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_41",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"PurpleCylinder_41\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/PurpleCylinder_41/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.0, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"PurpleCylinder_41\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/PurpleCylinder_41/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "PurpleCylinder_41",
+          "old_color_name": "purple",
+          "new_color_name": "black",
+          "new_color": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "description": "Change the purple cylinder to black"
+      },
+      "prompt": "Set the purple tube color to black",
+      "prompt_variations": [
+        "Set the purple tube color to black",
+        "Change the purple tube's color to black",
+        "Make the purple cylindrical object black"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "PurpleCylinder_41",
+        "new_color": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_42",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"YellowSphere_42\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, 0, 2)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/YellowSphere_42/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"YellowSphere_42\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, 0, 2)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/YellowSphere_42/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 1.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "YellowSphere_42",
+          "old_color_name": "yellow",
+          "new_color_name": "cyan",
+          "new_color": [
+            0.0,
+            1.0,
+            1.0
+          ]
+        },
+        "description": "Change the yellow sphere to cyan"
+      },
+      "prompt": "Change the yellow sphere's color to cyan",
+      "prompt_variations": [
+        "Change the yellow sphere's color to cyan",
+        "Make the yellow sphere cyan",
+        "Change the yellow ball's color to cyan"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "YellowSphere_42",
+        "new_color": [
+          0.0,
+          1.0,
+          1.0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cylinder_44",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"GrayCube_43\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, -2, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GrayCube_43/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.5, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"GrayCube_43\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, -2, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GrayCube_43/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.5, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n    def Cylinder \"BrownCylinder_44\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BrownCylinder_44/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.6, 0.3, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cylinder",
+          "color_name": "brown",
+          "color": [
+            0.6,
+            0.3,
+            0.0
+          ],
+          "position": [
+            0,
+            2,
+            0
+          ],
+          "scale": 2.0
+        },
+        "description": "Add a brown cylinder"
+      },
+      "prompt": "I want a brown cylinder 2 units forward",
+      "prompt_variations": [
+        "I want a brown cylinder 2 units forward",
+        "Make a brown tube in front",
+        "Add a brown cylindrical object at 2 units forward"
+      ],
+      "expected_metrics": {
+        "object_count": 2,
+        "new_object_type": "cylinder",
+        "new_object_color": [
+          0.6,
+          0.3,
+          0.0
+        ],
+        "new_object_position": [
+          0,
+          2,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cube_46",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"OrangeSphere_45\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (2, 0, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/OrangeSphere_45/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 0.5, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"OrangeSphere_45\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (2, 0, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/OrangeSphere_45/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 0.5, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n    def Cube \"BlueCube_46\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, -2, 0)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlueCube_46/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cube",
+          "color_name": "blue",
+          "color": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            0,
+            -2,
+            0
+          ],
+          "scale": 1.5
+        },
+        "description": "Add a blue cube"
+      },
+      "prompt": "I want a blue cubic object at position (0,-2,0)",
+      "prompt_variations": [
+        "I want a blue cubic object at position (0,-2,0)",
+        "Place a blue box 2 units back",
+        "Make a blue box at position (0,-2,0)"
+      ],
+      "expected_metrics": {
+        "object_count": 2,
+        "new_object_type": "cube",
+        "new_object_color": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "new_object_position": [
+          0,
+          -2,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_47",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"GraySphere_47\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GraySphere_47/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.5, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"GraySphere_47\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GraySphere_47/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.6, 0.3, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "GraySphere_47",
+          "old_color_name": "gray",
+          "new_color_name": "brown",
+          "new_color": [
+            0.6,
+            0.3,
+            0.0
+          ]
+        },
+        "description": "Change the gray sphere to brown"
+      },
+      "prompt": "Change the gray ball's color to brown",
+      "prompt_variations": [
+        "Change the gray ball's color to brown",
+        "Set the gray sphere color to brown",
+        "Change the color of the gray ball to brown"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "GraySphere_47",
+        "new_color": [
+          0.6,
+          0.3,
+          0.0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_sphere_49",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"MagentaCube_48\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, -2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/MagentaCube_48/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"MagentaCube_48\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, -2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/MagentaCube_48/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n    def Sphere \"BlueSphere_49\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (2, 0, 0)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlueSphere_49/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "sphere",
+          "color_name": "blue",
+          "color": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "position": [
+            2,
+            0,
+            0
+          ],
+          "scale": 2.0
+        },
+        "description": "Add a blue sphere"
+      },
+      "prompt": "Make a blue sphere 2 units right",
+      "prompt_variations": [
+        "Make a blue sphere 2 units right",
+        "Add a blue ball at at position (2,0,0)",
+        "Put a blue spherical object at position (2,0,0)"
+      ],
+      "expected_metrics": {
+        "object_count": 2,
+        "new_object_type": "sphere",
+        "new_object_color": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "new_object_position": [
+          2,
+          0,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_50",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"YellowSphere_50\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, 0, -2)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/YellowSphere_50/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"YellowSphere_50\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, 0, -2)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/YellowSphere_50/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "YellowSphere_50",
+          "old_color_name": "yellow",
+          "new_color_name": "black",
+          "new_color": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "description": "Change the yellow sphere to black"
+      },
+      "prompt": "Color the yellow spherical object black",
+      "prompt_variations": [
+        "Color the yellow spherical object black",
+        "Make the yellow spherical object black",
+        "Set the yellow ball color to black"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "YellowSphere_50",
+        "new_color": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cylinder_52",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"WhiteCube_51\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 0, -2)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/WhiteCube_51/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"WhiteCube_51\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 0, -2)\n        double3 xformOp:scale = (2.0, 2.0, 2.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/WhiteCube_51/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n    def Cylinder \"BrownCylinder_52\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, -2, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BrownCylinder_52/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.6, 0.3, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cylinder",
+          "color_name": "brown",
+          "color": [
+            0.6,
+            0.3,
+            0.0
+          ],
+          "position": [
+            0,
+            -2,
+            0
+          ],
+          "scale": 1.0
+        },
+        "description": "Add a brown cylinder"
+      },
+      "prompt": "I want a brown cylinder at the back",
+      "prompt_variations": [
+        "I want a brown cylinder at the back",
+        "I want a brown cylindrical object in back",
+        "I want a brown cylindrical object at position (0,-2,0)"
+      ],
+      "expected_metrics": {
+        "object_count": 2,
+        "new_object_type": "cylinder",
+        "new_object_color": [
+          0.6,
+          0.3,
+          0.0
+        ],
+        "new_object_position": [
+          0,
+          -2,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cube_54",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"PurpleSphere_53\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, -2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/PurpleSphere_53/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.0, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"PurpleSphere_53\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, -2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/PurpleSphere_53/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.0, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n    def Cube \"PurpleCube_54\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 0, 2)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/PurpleCube_54/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.0, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cube",
+          "color_name": "purple",
+          "color": [
+            0.5,
+            0.0,
+            0.5
+          ],
+          "position": [
+            0,
+            0,
+            2
+          ],
+          "scale": 0.5
+        },
+        "description": "Add a purple cube"
+      },
+      "prompt": "Add a purple cubic object at at position (0,0,2)",
+      "prompt_variations": [
+        "Add a purple cubic object at at position (0,0,2)",
+        "Create a purple box 2 units up",
+        "Add a purple box at at position (0,0,2)"
+      ],
+      "expected_metrics": {
+        "object_count": 2,
+        "new_object_type": "cube",
+        "new_object_color": [
+          0.5,
+          0.0,
+          0.5
+        ],
+        "new_object_position": [
+          0,
+          0,
+          2
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_55",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"BlackSphere_55\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlackSphere_55/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"BlackSphere_55\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlackSphere_55/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "BlackSphere_55",
+          "old_color_name": "black",
+          "new_color_name": "white",
+          "new_color": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "description": "Change the black sphere to white"
+      },
+      "prompt": "Turn the black ball white",
+      "prompt_variations": [
+        "Turn the black ball white",
+        "Turn the black sphere white",
+        "Set the black sphere color to white"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "BlackSphere_55",
+        "new_color": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_sphere_57",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"GraySphere_56\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, 0, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GraySphere_56/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.5, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Sphere \"GraySphere_56\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (0, 0, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/GraySphere_56/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.5, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n    def Sphere \"YellowSphere_57\"\n    {\n        double radius = 1.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/YellowSphere_57/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "sphere",
+          "color_name": "yellow",
+          "color": [
+            1.0,
+            1.0,
+            0.0
+          ],
+          "position": [
+            -2,
+            0,
+            0
+          ],
+          "scale": 0.5
+        },
+        "description": "Add a yellow sphere"
+      },
+      "prompt": "Place a yellow sphere 2 units left",
+      "prompt_variations": [
+        "Place a yellow sphere 2 units left",
+        "Create a yellow ball to the left",
+        "Place a yellow sphere at position (-2,0,0)"
+      ],
+      "expected_metrics": {
+        "object_count": 2,
+        "new_object_type": "sphere",
+        "new_object_color": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "new_object_position": [
+          -2,
+          0,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_58",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"BlueCube_58\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, -2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlueCube_58/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"BlueCube_58\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, -2, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlueCube_58/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "BlueCube_58",
+          "old_color_name": "blue",
+          "new_color_name": "yellow",
+          "new_color": [
+            1.0,
+            1.0,
+            0.0
+          ]
+        },
+        "description": "Change the blue cube to yellow"
+      },
+      "prompt": "Turn the blue cube yellow",
+      "prompt_variations": [
+        "Turn the blue cube yellow",
+        "Color the blue cube yellow",
+        "Turn the blue cubic object yellow"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "BlueCube_58",
+        "new_color": [
+          1.0,
+          1.0,
+          0.0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_59",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"BrownCube_59\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (2, 0, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BrownCube_59/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.6, 0.3, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"BrownCube_59\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (2, 0, 0)\n        double3 xformOp:scale = (0.5, 0.5, 0.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BrownCube_59/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.0, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "BrownCube_59",
+          "old_color_name": "brown",
+          "new_color_name": "purple",
+          "new_color": [
+            0.5,
+            0.0,
+            0.5
+          ]
+        },
+        "description": "Change the brown cube to purple"
+      },
+      "prompt": "Change the color of the brown cubic object to purple",
+      "prompt_variations": [
+        "Change the color of the brown cubic object to purple",
+        "Change the brown cube's color to purple",
+        "Change the color of the brown box to purple"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "BrownCube_59",
+        "new_color": [
+          0.5,
+          0.0,
+          0.5
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_add_cube_60",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cube \"OrangeCube_60\"\n    {\n        double size = 2.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/OrangeCube_60/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 0.5, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "add_primitive",
+        "parameters": {
+          "primitive_type": "cube",
+          "color_name": "orange",
+          "color": [
+            1.0,
+            0.5,
+            0.0
+          ],
+          "position": [
+            0,
+            2,
+            0
+          ],
+          "scale": 1.5
+        },
+        "description": "Add a orange cube"
+      },
+      "prompt": "Add a orange cubic object at at the front",
+      "prompt_variations": [
+        "Add a orange cubic object at at the front",
+        "Add a orange box at at position (0,2,0)",
+        "Add a orange box at at the front"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "new_object_type": "cube",
+        "new_object_color": [
+          1.0,
+          0.5,
+          0.0
+        ],
+        "new_object_position": [
+          0,
+          2,
+          0
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_61",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"BlueCylinder_61\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlueCylinder_61/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.0, 0.0, 1.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"BlueCylinder_61\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (0, 2, 0)\n        double3 xformOp:scale = (1.0, 1.0, 1.0)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/BlueCylinder_61/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.0, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "BlueCylinder_61",
+          "old_color_name": "blue",
+          "new_color_name": "purple",
+          "new_color": [
+            0.5,
+            0.0,
+            0.5
+          ]
+        },
+        "description": "Change the blue cylinder to purple"
+      },
+      "prompt": "Change the color of the blue cylindrical object to purple",
+      "prompt_variations": [
+        "Change the color of the blue cylindrical object to purple",
+        "Color the blue tube purple",
+        "Set the blue cylindrical object color to purple"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "BlueCylinder_61",
+        "new_color": [
+          0.5,
+          0.0,
+          0.5
+        ]
+      },
+      "ground_truth_render_path": null
+    },
+    {
+      "id": "simple_change_color_62",
+      "complexity": "simple",
+      "initial_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"PurpleCylinder_62\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/PurpleCylinder_62/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (0.5, 0.0, 0.5)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "target_usd": "#usda 1.0\n(\n    defaultPrim = \"World\"\n    upAxis = \"Z\"\n)\n\ndef Xform \"World\"\n{\n    def Cylinder \"PurpleCylinder_62\"\n    {\n        double height = 2.0\n        double radius = 1.0\n        double3 xformOp:translate = (-2, 0, 0)\n        double3 xformOp:scale = (1.5, 1.5, 1.5)\n        uniform token[] xformOpOrder = [\"xformOp:translate\", \"xformOp:scale\"]\n\n        def Material \"Material\"\n        {\n            token outputs:surface.connect = </World/PurpleCylinder_62/Material/Surface.outputs:surface>\n\n            def Shader \"Surface\"\n            {\n                uniform token info:id = \"UsdPreviewSurface\"\n                color3f inputs:diffuseColor = (1.0, 1.0, 0.0)\n                float inputs:metallic = 0.0\n                float inputs:roughness = 0.5\n                token outputs:surface\n            }\n        }\n    }\n}\n",
+      "edit_operation": {
+        "type": "change_color",
+        "parameters": {
+          "object_name": "PurpleCylinder_62",
+          "old_color_name": "purple",
+          "new_color_name": "yellow",
+          "new_color": [
+            1.0,
+            1.0,
+            0.0
+          ]
+        },
+        "description": "Change the purple cylinder to yellow"
+      },
+      "prompt": "Make the purple cylindrical object yellow",
+      "prompt_variations": [
+        "Make the purple cylindrical object yellow",
+        "Set the purple cylinder color to yellow",
+        "Set the purple tube color to yellow"
+      ],
+      "expected_metrics": {
+        "object_count": 1,
+        "object_name": "PurpleCylinder_62",
+        "new_color": [
+          1.0,
+          1.0,
+          0.0
+        ]
+      },
+      "ground_truth_render_path": null
+    }
+  ]
+}
