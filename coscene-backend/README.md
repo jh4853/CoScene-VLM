@@ -135,7 +135,3 @@ alembic upgrade head
 # Rollback
 alembic downgrade -1
 ```
-
-## Contributing
-
-See `IMPLEMENTATION_PLAN.md` for detailed development plan.
