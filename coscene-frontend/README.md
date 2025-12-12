@@ -80,21 +80,6 @@ src/
 └── App.tsx                 # Main app component
 ```
 
-## Usage
-
-1. **Start a session** - Automatically created on page load
-2. **Type a prompt** - e.g., "Create a red sphere in the center"
-3. **View the result** - Scene updates in the 3D viewport
-4. **Continue editing** - Chat maintains conversation context
-
-### Example Prompts
-
-- "Create a blue cube"
-- "Add a yellow sphere above the cube"
-- "Make the cube larger"
-- "Change the sphere color to green"
-- "Add three objects in a row"
-
 ## Development
 
 ### Build for Production
@@ -108,19 +93,3 @@ npm run build
 ```bash
 npm run preview
 ```
-
-## Troubleshooting
-
-### Backend Connection Issues
-
-If you see "Failed to Create Session":
-1. Ensure backend is running: `cd ../coscene-backend && docker-compose up`
-2. Check API URL in `.env` matches backend port
-3. Verify CORS is enabled in backend
-
-### Scene Not Loading
-
-If the 3D viewer shows errors:
-1. Check browser console for USD parsing errors
-2. Verify backend is returning valid USD content
-3. Try a simple prompt like "Create a sphere"

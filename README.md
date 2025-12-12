@@ -1,4 +1,4 @@
-# CoScene: Agentic 3D Scene Editing System
+# CoScene: Interactive Multi-Agent 3D Scene Editing via Vision-Language Models
 
 - **Authors:** Kshitij Chandna (kc3930), Jack Harris (jh4853)
 - **Course:** COMSE6998 - LLMs and Generative AI
